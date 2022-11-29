@@ -1,18 +1,18 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"strings"
 )
 
-var words string
+var counter int = 0
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	text, _ := reader.ReadString('\n')
-	s := strings.Fields(text)
-	fmt.Println(len(s))
-
+	argsWithoutProg := os.Args[1:]
+	s := strings.Split(argsWithoutProg[0], " ")
+	for range s {
+		counter += 1
+	}
+	fmt.Println(counter)
 }
